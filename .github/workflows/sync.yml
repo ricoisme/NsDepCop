@@ -13,4 +13,4 @@ jobs:
           fetch-depth: 0
       - run: git remote add upstream https://github.com/realvizu/NsDepCop.git
       - run: git fetch upstream
-      - run: git checkout main && git merge upstream/main && git push origin main
+      - run: git checkout master && git merge upstream/master && git push origin master
