@@ -8,9 +8,16 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout fork
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"   
+          
       - run: git remote add upstream https://github.com/realvizu/NsDepCop.git
       - run: git fetch upstream
       - run: git checkout master && git merge upstream/master && git push origin master
